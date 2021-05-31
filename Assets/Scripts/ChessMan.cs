@@ -75,9 +75,13 @@ public class ChessMan : MonoBehaviour
 
     private void OnMouseUp()
     {
-        DestroyMovePlates();
+        if (!controller.GetComponent<Game>().IsGameOver() && controller.GetComponent<Game>().GetCurrentPlayer() == player)
+        {
+            DestroyMovePlates();
 
-        InittiateMovePlates();
+            InittiateMovePlates();
+        }
+
     }
     public void DestroyMovePlates()
     {
@@ -128,11 +132,9 @@ public class ChessMan : MonoBehaviour
                 LineMovePlate(0,-1);
                 break;
             case "blackPawn":
-                Debug.Log("Girdi");
                 PawnMovePlate(xBoard, yBoard - 1);
                 break;
             case "whitePawn":
-                Debug.Log("Girdi");
                 PawnMovePlate(xBoard, yBoard + 1);
                 break;
         }
