@@ -41,7 +41,7 @@ public class MovePlate : MonoBehaviour
 
         controller.GetComponent<Game>().SetPosition(reference);
 
-        //reference.GetComponent<ChessMan>().DestroyMovePlates();
+        reference.GetComponent<ChessMan>().DestroyMovePlates();
 
     }
 
@@ -51,7 +51,7 @@ public class MovePlate : MonoBehaviour
         matrixY = y;
     }
 
-    public void SetReferebce(GameObject reference)
+    public void SetReference(GameObject reference)
     {
         this.reference = reference;
     }
